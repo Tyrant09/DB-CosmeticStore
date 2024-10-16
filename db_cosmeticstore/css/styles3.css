@@ -1,0 +1,532 @@
+/* body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4e1c1;
+    margin: 0;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: #d58b41;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: #ffffff;
+    border: 2px solid #ff9900;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 15px;
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.card a {
+    display: block;
+    padding: 10px;
+    background-color: #ff9900;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.card a:hover {
+    background-color: #e68a00;
+}
+
+.logout-button {
+    background-color: #D9534F;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.2s;
+    margin: 20px auto;
+    display: block; 
+}
+
+.logout-button:hover {
+    background-color: #C9302C;
+    transform: translateY(-2px);
+} */
+
+/*------------------------------------------------------------------------------------------------*/
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4e1c1;
+    margin: 0;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: #d58b41;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.admin-welcome-message {
+    font-size: 1.5em; /* ขนาดฟอนต์ */
+    font-weight: bold; /* หนา */
+    color: #333; /* สีข้อความ */
+    background-color: #d58b41; /* สีพื้นหลัง */
+    padding: 10px 20px; /* ขอบด้านใน */
+    border-radius: 8px; /* มุมโค้ง */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* เงา */
+    margin-bottom: 20px; /* ระยะห่างด้านล่าง */
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 600px; /* จำกัดความกว้างของการ์ด */
+    margin: 0 auto; /* จัดกลาง */
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap; /* ทำให้การ์ดสามารถขยายออกได้ */
+    justify-content: center; /* จัดกลางการ์ด */
+    margin: 20px 0; /* ระยะห่างด้านบนและล่าง */
+}
+
+.menu-item {
+    background-color: #ffffff;
+    border: 2px solid #f6c453;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 15px;
+    padding: 20px;
+    text-align: center;
+    width: 200px; /* ความกว้างของการ์ด */
+    transition: transform 0.2s;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px); /* ยกการ์ดเมื่อเอาเมาส์ไปวาง */
+}
+
+.menu-item img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.menu-item a {
+    display: block;
+    padding: 10px;
+    background-color: #ff9900;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.menu-item a:hover {
+    background-color: #e68a00; /* เปลี่ยนสีเมื่อ hover */
+}
+
+.logout-button {
+    background-color: #D9534F;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.2s;
+    margin: 20px auto; /* จัดกลาง */
+    display: block; /* จัดให้อยู่ในบรรทัดใหม่ */
+}
+
+.logout-button:hover {
+    background-color: #C9302C;
+    transform: translateY(-2px);
+}
+
+/*------------------------------------------------------------------------------------------------*/
+.card-container {
+    width: 80%;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    margin-top: 30px;
+}
+
+.edit-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
+.edit-button:hover {
+    background-color: #0056b3;
+}
+
+.image-cell {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-cell img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.description-cell {
+    max-width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.pagination a {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.pagination a:hover {
+    background-color: #45a049;
+}
+
+.pagination a.active {
+    background-color: #45a049;
+}
+
+.pagination a.disabled {
+    background-color: #ddd;
+    pointer-events: none;
+}
+
+/* ปุ่มย้อนกลับ */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.back-btn {
+    background-color: #f44336; /* Red background */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 20px;
+    display: inline-block;
+}
+
+.back-btn:hover {
+    background-color: #d32f2f;
+}
+
+.add-product-btn {
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.add-product-btn:hover {
+    background-color: #45a049;
+}
+
+
+
+/* Page layout */
+.edit-product-page {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 40px 20px;
+    /* display: flex;
+    justify-content: center;
+    align-items: flex-start; */
+    min-height: 100vh;
+}
+
+/* Title */
+.form-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+}
+
+/* Form container */
+/* Form container */
+/* Page layout */
+.edit-product-page, .edit-user-page {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 40px 20px;
+    min-height: 100vh; /* Full viewport height */
+}
+
+/* Card style for edit-product-container */
+.edit-product-container, .edit-user-container {
+    background-color: #ffffff;
+    padding: 30px;
+    max-width: 600px; /* Limit the max width for better appearance */
+    width: 100%; /* Full width on smaller screens */
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 20px; /* Margin for spacing */
+}
+
+.edit-product-container1, .edit-user-container1 {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+}
+
+/* Title */
+.form-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+}
+
+/* Form container */
+.edit-product-form {
+    display: flex;
+    flex-direction: column; /* Align children in a column */
+}
+
+/* Form group structure */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Labels */
+.form-label {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    display: block;
+    color: #444;
+}
+
+/* Input fields and textareas */
+.form-input,
+.form-textarea {
+    width: 95%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.form-textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+/* Submit button */
+.form-actions {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space out buttons */
+    margin-top: 20px; /* Space above the buttons */
+}
+
+.back-button-form {
+    margin: 0; /* Remove default margin */
+}
+
+.back-button {
+    background-color: #f44336; /* Red background for the back button */
+    color: white; /* White text */
+    padding: 10px 20px; /* Padding */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1rem; /* Font size */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.back-button:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+.form-submit-btn {
+    background-color: #007BFF; /* Blue background for the submit button */
+    color: white; /* White text */
+    padding: 10px 20px; /* Padding */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1rem; /* Font size */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.form-submit-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+/* Success and error messages */
+.success-message {
+    color: green;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .edit-product-container {
+        padding: 20px;
+        box-shadow: none;
+    }
+
+    .form-title {
+        font-size: 1.5rem;
+    }
+
+    .form-submit-btn {
+        font-size: 1rem;
+    }
+}
+
+
+
+body.add-product-page {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+.form-title {
+    text-align: center;
+    color: #333;
+}
+
+.add-product-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.add-product-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-input, .form-textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-textarea {
+    resize: vertical;
+}
+
+.form-submit-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.form-submit-btn:hover {
+    background-color: #218838;
+}
+
+
+.add-user-btn {
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.add-user-btn:hover {
+    background-color: #45a049;
+}

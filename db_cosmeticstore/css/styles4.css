@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4e1c1;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+.image-cell img {
+    max-width: 100px; /* ปรับขนาดรูปภาพ */
+    max-height: 100px;
+}
+
+input[type="submit"] {
+    background-color: #ff4c4c; /* สีพื้นหลังปุ่มลบ */
+    color: white; /* สีข้อความ */
+    border: none; /* ไม่มีเส้นขอบ */
+    padding: 10px 15px; /* ระยะห่างภายในปุ่ม */
+    border-radius: 5px; /* มุมโค้ง */
+    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เมื่อชี้ */
+    transition: background-color 0.3s ease; /* เอฟเฟกต์การเปลี่ยนสี */
+}
+
+/* เปลี่ยนสีเมื่อชี้เมาส์ */
+input[type="submit"]:hover {
+    background-color: #ff1a1a; /* สีพื้นหลังเมื่อชี้ */
+}
